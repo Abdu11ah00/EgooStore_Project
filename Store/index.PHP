@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Bi-Gamer</title>
+  <title>test Bi-Gamer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- site favicon -->
@@ -107,7 +107,7 @@
     style="background-image: url(assets/images/match/bg-2.jpg)">
     <div class="container">
       <div class="section-header">
-        <p>Bi-Gamer t-shirt’s</p>
+        <p>EgoStore t-shirt’s</p>
         <h2>explore our products</h2>
       </div>
       <div class="section-wrapper">

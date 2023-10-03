@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>BiGamer About Page</title>
+	<title>test BiGamer About Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- site favicon -->

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="section-wrapper">
             <div class="section-header">
-                <p>Bi-Gamer t-shirt’s</p>
+                <p>EgoStore t-shirt’s</p>
                 <h2>explore our products</h2>
             </div>
             <div class="row g-4">
