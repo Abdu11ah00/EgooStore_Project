@@ -4,7 +4,7 @@
             <div class="brand-logo d-none d-lg-inline-block">
                 <div class="logo">
                     <a href="index.php">
-                        <img style="width: 116px; height: 100px; object-fit: cover;" src="./assets/images/logo/EgooStoreLogo.png" alt="logo">
+                        <img style="width: 116px; height: 100px; object-fit: cover;" src="./assets/images/logo/LOGO1.png" alt="logo">
                     </a>
                 </div>
             </div>
@@ -13,27 +13,27 @@
                     <div class="header-top-area">
                         <ul class="left">
                             <li>
-                                <i class="icofont-ui-call"></i> <span>+800-123-4567 6587</span>
+                                <i class="icofont-ui-call"></i> <span>+966-55-5555 555</span>
                             </li>
                             <li>
-                                <i class="icofont-location-pin"></i> Beverley, New York 224 USA
+                                <i class="icofont-location-pin"></i> Saudi Arabia, Riyadh 111 KSA
                             </li>
                         </ul>
                         <ul class="social-icons d-flex align-items-center">
                             <li>
-                                <a href="#" class="fb"><i class="icofont-facebook-messenger"></i></a>
+                                <a href="#" class="twitter"><i class="icofont-telegram"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                                <a href="#" class="vimeo"><i class="icofont-whatsapp"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+                                <a href="#" class="skype"><i class="icofont-youtube"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="skype"><i class="icofont-skype"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="rss"><i class="icofont-rss-feed"></i></a>
+                                <a href="#" class="skype"><i class="icofont-instagram"></i></a>
+                            
+
+
                             </li>
                         </ul>
                     </div>

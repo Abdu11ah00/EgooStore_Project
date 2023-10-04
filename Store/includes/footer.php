@@ -9,7 +9,7 @@
                                     <img src="assets/images/footer/icons/01.png" alt="Phone-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>Phone Number : +88019 339 702 520</span>
+                                    <span>Phone Number : 966-55-5555 555</span>
                                 </div>
                             </div>
                         </div>
@@ -21,7 +21,7 @@
                                     <img src="assets/images/footer/icons/02.png" alt="email-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>Email : youremail@gmail.com</span>
+                                    <span>Email : EgooStore@EgooStore.com</span>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                                     <img src="assets/images/footer/icons/03.png" alt="location-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>Address : 30 North West New York 240</span>
+                                    <span>Address : Saudi Arabia, Riyadh 111 KSA0</span>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                                     <h4>Our Newsletter</h4>
                                 </div>
                                 <div class="fm-item-content">
-                                    <p>Bigamer esports organization supported by community leaders</p>
+                                    <p>EgooStore organization supported by community leaders</p>
                                     <form>
                                         <div class="form-group mb-4">
                                             <input type="text" class="form-control" placeholder="Your Name">
@@ -98,7 +98,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="footer-bottom-content text-center">
-                            <p>&copy;2021 <a href="index.html">BiGamer</a> - eSpost And Gameing HTML Template.</p>
+                            <p>&copy;2021 <a href="index.php">EgooStore</a> - EgooStore And Gameing HTML Template.</p>
                         </div>
                     </div>
                 </div>
