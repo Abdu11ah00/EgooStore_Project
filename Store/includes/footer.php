@@ -9,7 +9,7 @@
                                     <img src="assets/images/footer/icons/01.png" alt="Phone-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>Phone Number : 966-55-5555 555</span>
+                                    <span>Phone Number : 966545138000</span>
                                 </div>
                             </div>
                         </div>
@@ -21,7 +21,7 @@
                                     <img src="assets/images/footer/icons/02.png" alt="email-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>Email : EgooStore@EgooStore.com</span>
+                                    <span>Email : Support@EgooStore.com</span>
                                 </div>
                             </div>
                         </div>

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Big- Gamer Team Single</title>
+	<title>Egoo-Store signup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- site favicon -->
