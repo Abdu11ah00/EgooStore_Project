@@ -4,7 +4,7 @@
             <div class="brand-logo d-none d-lg-inline-block">
                 <div class="logo">
                     <a href="index.php">
-                        <img style="width: 116px; height: 100px; object-fit: cover;" src="./assets/images/logo/LOGO1.png" alt="logo">
+                        <img style="width: 116px; height: 100px; object-fit: cover;" src="./assets/images/logo/logo.png" alt="logo">
                     </a>
                 </div>
             </div>
@@ -13,7 +13,7 @@
                     <div class="header-top-area">
                         <ul class="left">
                             <li>
-                                <i class="icofont-ui-call"></i> <span>+966-55-5555 555</span>
+                                <i class="icofont-ui-call"></i> <span>+966545138000</span>
                             </li>
                             <li>
                                 <i class="icofont-location-pin"></i> Saudi Arabia, Riyadh 111 KSA
