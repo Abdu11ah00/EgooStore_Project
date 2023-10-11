@@ -28,9 +28,13 @@
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <p>
-                                                It is a Saudi bank that practices banking activities and its
-                                                headquarters are in the city of Riyadh. It is considered the newest
-                                                Saudi bank, as it began its work in 2008.
+                                            King Saud University (KSU) is a prominent public research university located in Riyadh
+                                            the capital city of Saudi Arabia. It is one of the oldest and most prestigious universities in the country
+                                            and is considered a leading institution of higher education in the Arab world.
+                                            KSU was established in 1957 and has since grown
+                                            into a comprehensive university with a diverse range of academic programs and research activities.
+                                            headquarters are in the city of Riyadh. It is considered the newest
+                                            Saudi bank, as it began its work in 2008.
                                             </p>
                                         </div>
                                     </div>
@@ -44,7 +48,7 @@
                                             aria-controls="collapseTwo">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
                                                 <span class="accor-thumb">
-                                                    <img src="assets/images/sponsor/02.png" alt="partner-thumb" />
+                                                    <img src="assets/images/sponsor/UP.png" alt="partner-thumb" />
                                                 </span>
                                                 <span class="accor-title">Book Store</span>
                                             </span>
@@ -54,14 +58,12 @@
                                         aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <p>
-                                                Qorem ipsum dolor sit amet consectetur adipisicing
-                                                elit. Libero voluptas provident qui corporis facere
-                                                officia numquam, repelat, vel ameting velit quidem
-                                                culpa vitae error ex porro voluptates a veritatis
-                                                sed illum doloring inventore blanditiis impedit!
-                                                Aliquid, amet ipsa, tenetur nisit perferendisi
-                                                excepturi, commodi nobis eligendi harum iure
-                                                exercita.
+                                            The people who built this server.
+                                            1.Abdullah Altayaar
+                                            2.Ibrahim Al-Jabri
+                                            3.Nawaf Al-Awda
+                                            4.abdullah_Alghamdi
+                                            5.Saad Al shaflut
                                             </p>
                                         </div>
                                     </div>
@@ -82,9 +84,9 @@
                                             aria-expanded="true" aria-controls="collapseFive">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
                                                 <span class="accor-thumb">
-                                                    <img src="assets/images/sponsor/05.png" alt="partner-thumb" />
+                                                    <img src="assets/images/sponsor/ArabCityCFW.png" alt="partner-thumb" />
                                                 </span>
-                                                <span class="accor-title">Vintage</span>
+                                                <span class="accor-title">Arab City CFW</span>
                                             </span>
                                         </button>
                                     </div>
@@ -92,14 +94,7 @@
                                         aria-labelledby="headingFive" data-bs-parent="#accordionExample-2">
                                         <div class="accordion-body">
                                             <p>
-                                                Qorem ipsum dolor sit amet consectetur adipisicing
-                                                elit. Libero voluptas provident qui corporis facere
-                                                officia numquam, repelat, vel ameting velit quidem
-                                                culpa vitae error ex porro voluptates a veritatis
-                                                sed illum doloring inventore blanditiis impedit!
-                                                Aliquid, amet ipsa, tenetur nisit perferendisi
-                                                excepturi, commodi nobis eligendi harum iure
-                                                exercita.
+                                                 Arab City CFW FiveM server to gather people and play with others.
                                             </p>
                                         </div>
                                     </div>

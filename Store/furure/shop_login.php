@@ -413,11 +413,11 @@
                                         enable prospective wastng markets whereas propriate and brand economca sound
                                         technolog</p>
                                     <ul class="match-social-list d-flex flex-wrap align-items-center">
-                                        <li><a href="#"><img src="assets/images/match/social-1.png" alt="vimeo"></a>
+                                        <li><a href="#"><img src="assets/images/match/Snapchat" alt="vimeo"></a>
                                         </li>
-                                        <li><a href="#"><img src="assets/images/match/social-2.png" alt="youtube"></a>
+                                        <li><a href="#"><img src="assets/images/match/instagram" alt="youtube"></a>
                                         </li>
-                                        <li><a href="#"><img src="assets/images/match/social-3.png" alt="twitch"></a>
+                                        <li><a href="#"><img src="assets/images/match/Whatsapp" alt="twitch"></a>
                                         </li>
                                     </ul>
                                 </div>

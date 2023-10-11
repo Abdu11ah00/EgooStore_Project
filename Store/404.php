@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>BiGamer 404</title>
+	<title>Egoo-Store 404</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- site favicon -->
