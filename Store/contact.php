@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>BiGamer Contact Us</title>
+	<title>Egoo-Store</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- site favicon -->
@@ -97,7 +97,7 @@
                             </div>
                             <div class="contact-content">
                                 <h6 class="title">Phone number</h6>
-                                <p>+22698 745 632,02 982 745</p>
+                                <p>+966545138000</p>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="contact-content">
                                 <h6 class="title">Send Email</h6>
-                                <p>adminbigamer@gmil.com</p>
+                                <p>Support@EgooStore.com</p>
                             </div>
                         </div>
                     </div>

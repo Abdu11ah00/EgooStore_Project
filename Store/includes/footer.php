@@ -9,7 +9,7 @@
                                     <img src="assets/images/footer/icons/01.png" alt="Phone-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>Phone Number : 966-55-5555 555</span>
+                                    <span>Phone Number : 966545138000</span>
                                 </div>
                             </div>
                         </div>
@@ -21,7 +21,7 @@
                                     <img src="assets/images/footer/icons/02.png" alt="email-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>Email : EgooStore@EgooStore.com</span>
+                                    <span>Email : Support@EgooStore.com</span>
                                 </div>
                             </div>
                         </div>
@@ -56,6 +56,7 @@
                                         enable prospective wastng markets whereas propriate and brand economca sound
                                         technolog</p>
                                     <ul class="match-social-list d-flex flex-wrap align-items-center">
+<<<<<<< HEAD
                                         <li><a href="#"><img src="assets/images/match/social-1.png" alt="tiktok"></a>
                                         </li>
                                         <li><a href="#"><img src="assets/images/match/social-2.png" alt="youtube"></a>
@@ -80,10 +81,13 @@
                                     Approved by the Saudi Ministry of Commerce and Investment on the maroof platform</p>
                                     <ul class="match-social-list d-flex flex-wrap align-items-center">
                                         <li><a href="#"><img src="assets/images/match/social-1.png" alt="twitter"></a>
+=======
+                                        <li><a href="#"><img src="assets/images/match/Snapchat.png" alt="Snapchat"></a>
+>>>>>>> 6a99956b0f2d26fe4050a03ce588e359959904b8
                                         </li>
-                                        <li><a href="#"><img src="assets/images/match/social-2.png" alt="youtube"></a>
+                                        <li><a href="#"><img src="assets/images/match/instagram.png" alt="instagram"></a>
                                         </li>
-                                        <li><a href="#"><img src="assets/images/match/social-3.png" alt="twitch"></a>
+                                        <li><a href="#"><img src="assets/images/match/Whatsapp.png" alt="Whatsapp"></a>
                                         </li>
                                     </ul>
                                 </div>
