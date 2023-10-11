@@ -56,13 +56,13 @@
                                         enable prospective wastng markets whereas propriate and brand economca sound
                                         technolog</p>
                                     <ul class="match-social-list d-flex flex-wrap align-items-center">
-<<<<<<< HEAD
-                                        <li><a href="#"><img src="assets/images/match/social-1.png" alt="tiktok"></a>
-                                        </li>
                                         <li><a href="#"><img src="assets/images/match/social-2.png" alt="youtube"></a>
                                         </li>
                                         <li><a href="#"><img src="assets/images/match/social-3.png" alt="twitch"></a>
-                                        
+                                        </li>
+                                        <li><a href="#"><img src="assets/images/match/instagram.png" alt="instagram"></a>
+                                        </li>
+                                        <li><a href="#"><img src="assets/images/match/Whatsapp.png" alt="Whatsapp"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -74,22 +74,12 @@
                         <div class="footer-middle-item-wrapper">
                             <div class="footer-middle-item mb-lg-0">
                                 <div class="fm-item-title mb-4">
-                                    <img style="width: 116px; height: 100px; object-fit: cover;"  src="./assets/images/logo/ImageM.png" alt="logo">
+                                    <!-- <img style="width: 116px; height: 100px; object-fit: cover;"  src="./assets/images/logo/ImageM.png" alt="logo"> -->
+                                    <img   src="./assets/images/logo/ImageM.png" alt="logo">
                                 </div>
                                 <div class="fm-item-content">
                                     <p class="mb-4">Trusted and registered website
                                     Approved by the Saudi Ministry of Commerce and Investment on the maroof platform</p>
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center">
-                                        <li><a href="#"><img src="assets/images/match/social-1.png" alt="twitter"></a>
-=======
-                                        <li><a href="#"><img src="assets/images/match/Snapchat.png" alt="Snapchat"></a>
->>>>>>> 6a99956b0f2d26fe4050a03ce588e359959904b8
-                                        </li>
-                                        <li><a href="#"><img src="assets/images/match/instagram.png" alt="instagram"></a>
-                                        </li>
-                                        <li><a href="#"><img src="assets/images/match/Whatsapp.png" alt="Whatsapp"></a>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
