@@ -4,7 +4,8 @@
             <div class="brand-logo d-none d-lg-inline-block">
                 <div class="logo">
                     <a href="index.php">
-                        <img style="width: 116px; height: 100px; object-fit: cover;" src="./assets/images/logo/LOGO1.png" alt="logo">
+                        <img style="width: 116px; height: 100px; object-fit: cover;"
+                            src="./assets/images/logo/LOGO1.png" alt="logo">
                     </a>
                 </div>
             </div>
@@ -31,7 +32,7 @@
                             </li>
                             <li>
                                 <a href="#" class="skype"><i class="icofont-instagram"></i></a>
-                            
+
 
 
                             </li>
@@ -53,14 +54,8 @@
                                         <li><a href="signup.php">signup</a></li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#0" class="active">Shop</a>
-                                    <ul class="submenu">
-                                        <li><a href="shop.php">shop</a></li>
-                                        <li><a href="shop-single.php">Shop Details</a></li>
-                                        <li><a href="cart-page.php">Cart Page</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="shop.php">shop</a></li>
+                                <li><a href="cart-page.php">Cart Page</a></li>
                                 <li>
                                     <a href="#0" class="active">More</a>
                                     <ul class="submenu">

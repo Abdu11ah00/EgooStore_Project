@@ -62,8 +62,11 @@
         exit;
     }
 
-    //Select all users
+    //Select all product
     $query = "SELECT * FROM product";
+
+    //Select all categories
+    $query_categories = "SELECT * FROM categories";
 
 
     //Search by the name or the email
@@ -72,7 +75,9 @@
     //     $query .= " WHERE `listpro`.`name` LIKE '%" . $search . "%' OR `listpro`.`email` LIKE '%" . $search . "%'";
     // }
     
-    $result = mysqli_query($con, $query);
+    $result_product = mysqli_query($con, $query);
+
+    $result_categories = mysqli_query($con, $query_categories);
 
     ?>
 
@@ -112,7 +117,7 @@
 
                             <!-- Print all the products -->
                             <?php
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            while ($row = mysqli_fetch_assoc($result_product)) {
                                 ?>
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div class="product-item">
@@ -122,7 +127,8 @@
                                                     src="assets/images/product/<?= $row['Prod_Img1'] ?>" alt="shop">
                                             </div>
                                             <div class="product-action-link">
-                                                <a href="#"><i class="icofont-eye"></i></a>
+                                                <a href="shop-single?id=<?= $row['Prod_ID'] ?>"><i
+                                                        class="icofont-eye"></i></a>
                                                 <a href="#"><i class="icofont-heart"></i></a>
                                                 <a href="#"><i class="icofont-cart-alt"></i></a>
                                             </div>
@@ -190,21 +196,14 @@
                             </div>
                             <div class="widget-wrapper">
                                 <ul class="shop-menu lab-ul">
-                                    <li>
-                                        <a href="#0">Store Key</a>
-                                        <ul class="shop-submenu lab-ul">
-                                            <li><a href="#0">All Products</a></li>
-                                            <li><a href="#0">X-BOX</a></li>
-                                            <li><a href="#0">PLAYSTATION</a></li>
-                                            <li><a href="#0">APPLE</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#0">antivirus </a>
-                                        <ul class="shop-submenu lab-ul">
-                                            <li><a href="#0">All Products</a></li>
-                                            <li><a href="#0">McAfee</a></li>
-                                        </ul>
-                                    </li>
+                                    <?php
+                                    // this while loop to print all categories
+                                    while ($row = mysqli_fetch_assoc($result_categories)) {
+                                        ?>
+                                        <li><a href="#0">
+                                                <?= $row['Cate_Name'] ?>
+                                            </a></li>
+                                    <?php } ?>
                                 </ul>
                             </div>
                         </div>
@@ -212,10 +211,10 @@
                         <?php
                         $query = "SELECT * FROM product LIMIT 1";
 
-                        $result2 = mysqli_query($con, $query);
+                        $result_product_recent = mysqli_query($con, $query);
 
 
-                        while ($row = mysqli_fetch_assoc($result2)) {
+                        while ($row = mysqli_fetch_assoc($result_product_recent)) {
                             ?>
                             <div class="widget widget-post recent-product">
                                 <div class="widget-header">
@@ -350,7 +349,9 @@
 
 
     <?php
-    mysqli_free_result($result);
+    mysqli_free_result($result_product);
+    mysqli_free_result($result_product_recent);
+    mysqli_free_result($result_categories);
     mysqli_close($con);
     ?>
     <!-- ================ footer Section start Here =============== -->
