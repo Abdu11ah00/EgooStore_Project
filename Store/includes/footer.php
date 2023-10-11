@@ -49,7 +49,7 @@
                         <div class="footer-middle-item-wrapper">
                             <div class="footer-middle-item mb-lg-0">
                                 <div class="fm-item-title mb-4">
-                                    <img style="width: 116px; height: 100px; object-fit: cover;"  src="./assets/images/logo/EgooStoreLogo.png" alt="logo">
+                                    <img style="width: 116px; height: 100px; object-fit: cover;"  src="./assets/images/logo/logo1.png" alt="logo">
                                 </div>
                                 <div class="fm-item-content">
                                     <p class="mb-4">Upropriate brand economca sound technolog after covalent technology

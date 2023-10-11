@@ -4,12 +4,12 @@
             <div class="brand-logo d-none d-lg-inline-block">
                 <div class="logo">
                     <a href="index.php">
-<<<<<<< HEAD
-                        <img style="width: 116px; height: 100px; object-fit: cover;"
-                            src="./assets/images/logo/LOGO1.png" alt="logo">
-=======
+
+                        <!-- <img style="width: 116px; height: 100px; object-fit: cover;"
+                            src="./assets/images/logo/logo1.png" alt="logo"> -->
+
                         <img style="width: 80px; height: 40px; object-fit: cover;" src="./assets/images/logo/logoup.png" alt="logo">
->>>>>>> 6a99956b0f2d26fe4050a03ce588e359959904b8
+
                     </a>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="header-bottom">
                     <div class="header-wrapper justify-content-lg-end">
                         <div class="mobile-logo d-lg-none">
-                            <a href="index.php"><img src="./assets/images/logo/EgooStoreLogo.png" alt="logo"></a>
+                            <a href="index.php"><img src="./assets/images/logo/logoup" alt="logo"></a>
                         </div>
                         <div class="menu-area">
                             <ul class="menu">
