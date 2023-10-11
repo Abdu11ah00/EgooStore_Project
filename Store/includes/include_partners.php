@@ -28,9 +28,13 @@
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <p>
-                                                It is a Saudi bank that practices banking activities and its
-                                                headquarters are in the city of Riyadh. It is considered the newest
-                                                Saudi bank, as it began its work in 2008.
+                                            King Saud University (KSU) is a prominent public research university located in Riyadh
+                                            the capital city of Saudi Arabia. It is one of the oldest and most prestigious universities in the country
+                                            and is considered a leading institution of higher education in the Arab world.
+                                            KSU was established in 1957 and has since grown
+                                            into a comprehensive university with a diverse range of academic programs and research activities.
+                                            headquarters are in the city of Riyadh. It is considered the newest
+                                            Saudi bank, as it began its work in 2008.
                                             </p>
                                         </div>
                                     </div>
