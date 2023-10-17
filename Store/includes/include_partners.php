@@ -86,7 +86,7 @@
                                                 <span class="accor-thumb">
                                                     <img src="assets/images/sponsor/ArabCityCFW.png" alt="partner-thumb" />
                                                 </span>
-                                                <span class="accor-title">Arab City CFW</span>
+                                                <span class="accor-title">Arab Night CFW</span>
                                             </span>
                                         </button>
                                     </div>
@@ -94,7 +94,7 @@
                                         aria-labelledby="headingFive" data-bs-parent="#accordionExample-2">
                                         <div class="accordion-body">
                                             <p>
-                                                 Arab City CFW FiveM server to gather people and play with others.
+                                                 Arab Night CFW FiveM server to gather people and play with others.
                                             </p>
                                         </div>
                                     </div>

@@ -49,7 +49,7 @@
                         <div class="footer-middle-item-wrapper">
                             <div class="footer-middle-item mb-lg-0">
                                 <div class="fm-item-title mb-4">
-                                    <img style="width: 116px; height: 100px; object-fit: cover;"  src="./assets/images/logo/logo1.png" alt="logo">
+                                    <img style="width: 84px;height: 70px;/* object-fit: cover; */" src="./assets/images/logo/logo1.png" alt="logo">
                                 </div>
                                 <div class="fm-item-content">
                                     <p class="mb-4">Upropriate brand economca sound technolog after covalent technology
@@ -62,7 +62,7 @@
                                         </li>
                                         <li><a href="#"><img src="assets/images/match/instagram.png" alt="instagram"></a>
                                         </li>
-                                        <li><a href="#"><img src="assets/images/match/Whatsapp.png" alt="Whatsapp"></a>
+                                        <li><a href="https://api.whatsapp.com/send/?phone=966545138000&text&type=phone_number&app_absent=0"><img src="assets/images/match/Whatsapp.png" alt="Whatsapp"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -74,8 +74,7 @@
                         <div class="footer-middle-item-wrapper">
                             <div class="footer-middle-item mb-lg-0">
                                 <div class="fm-item-title mb-4">
-                                    <!-- <img style="width: 116px; height: 100px; object-fit: cover;"  src="./assets/images/logo/ImageM.png" alt="logo"> -->
-                                    <img   src="./assets/images/logo/ImageM.png" alt="logo">
+                                    <img style="width: 156px;height: 70px;/;object-fit: cover;" src="./assets/images/logo/ImageM.png" alt="logo">
                                 </div>
                                 <div class="fm-item-content">
                                     <p class="mb-4">Trusted and registered website

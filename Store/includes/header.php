@@ -5,10 +5,7 @@
                 <div class="logo">
                     <a href="index.php">
 
-                        <!-- <img style="width: 116px; height: 100px; object-fit: cover;"
-                            src="./assets/images/logo/logo1.png" alt="logo"> -->
-
-                        <img style="width: 80px; height: 40px; object-fit: cover;" src="./assets/images/logo/logoup.png" alt="logo">
+                        <img style="width: 130px;/* height: 65px; */object-fit: cover;" src="./assets/images/logo/logoup.png" alt="logo">
 
                     </a>
                 </div>
