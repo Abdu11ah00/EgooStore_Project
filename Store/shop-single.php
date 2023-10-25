@@ -122,7 +122,7 @@
                                             for ($i = 1; $i <= 3; $i++) {
                                                 $img = "Prod_Img" . $i;
                                                 echo "<div class='swiper-slide'>
-                                                            <div class='single-thumb'><img src='assets/images/product/" . $row[$img] . "' alt='shop'></div>
+                                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
                                                             </div>";
                                             }
 
@@ -134,23 +134,23 @@
                                             for ($i = 1; $i <= 2; $i++) {
                                                 $img = "Prod_Img" . $i;
                                                 echo "<div class='swiper-slide'>
-                                                            <div class='single-thumb'><img src='assets/images/product/" . $row[$img] . "' alt='shop'></div>
+                                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
                                                             </div>";
                                             }
 
                                             echo "</div>
                                         </div>";
-                                        } else if (isset($row['Prod_Img1'])) {
+                                        } else if (isset($row['Prod_Img'])) {
                                             echo "<div class='swiper-container pro-single-top'>
                                                 <div class='swiper-wrapper'>";
 
                                             echo "<div class='swiper-slide'>
-                                                    <div class='single-thumb'><img src='assets/images/product/" . $row['Prod_Img1'] . "' alt='shop'></div>
+                                                    <div class='single-thumb'><img src='assets/images/product/" . $row['Prod_Img'] . "' alt='shop'></div>
                                                     </div>";
 
                                             echo "</div>
                                         </div>";
-                                        }else{
+                                        } else {
                                             echo "";
                                         }
                                         ?>
@@ -165,7 +165,7 @@
                                             for ($i = 1; $i <= 3; $i++) {
                                                 $img = "Prod_Img" . $i;
                                                 echo "<div class='swiper-slide'>
-                                            <div class='single-thumb'><img src='assets/images/product/" . $row[$img] . "' alt='shop'></div>
+                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
                                             </div>";
                                             }
 
@@ -180,7 +180,7 @@
                                             for ($i = 1; $i <= 2; $i++) {
                                                 $img = "Prod_Img" . $i;
                                                 echo "<div class='swiper-slide'>
-                                            <div class='single-thumb'><img src='assets/images/product/" . $row[$img] . "' alt='shop'></div>
+                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
                                             </div>";
                                             }
 
@@ -322,19 +322,13 @@
                                 </div>
 
                                 <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                        eu
-                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                                        in
-                                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>
+                                        <?= (isset($row['Prod_Short_Desc'])) ? $row['Prod_Short_Desc'] : '' ?>
+                                    </p>
+
                                     <div class="post-item">
                                         <div class="post-thumb">
-                                            <img src="assets/images/shop/01.jpg" alt="shop">
+                                            <img src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="shop">
                                         </div>
                                         <div class="post-content">
                                             <ul class="lab-ul">
@@ -364,13 +358,7 @@
                                         </div>
                                     </div>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                        non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        <?= (isset($row['Prod_Below_Desc'])) ? $row['Prod_Below_Desc'] : '' ?>
                                     </p>
                                 </div>
                             </div>
@@ -397,7 +385,7 @@
                             </div>
                             <div class="widget-wrapper">
                                 <ul class="shop-menu lab-ul">
-                                <?php
+                                    <?php
                                     // this while loop to print all categories
                                     while ($row = mysqli_fetch_assoc($result_categories)) {
                                         ?>
@@ -426,7 +414,7 @@
                                         <div class="post-thumb">
                                             <a href="shop-single.html"><img
                                                     style="width: 200px; height: 180px; object-fit: contain;"
-                                                    src="assets/images/product/<?= $row['Prod_Img1'] ?>" alt="product"></a>
+                                                    src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="product"></a>
                                         </div>
                                         <div class="post-content ps-4">
                                             <a href="shop-single.html">
