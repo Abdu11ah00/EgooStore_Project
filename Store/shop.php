@@ -63,7 +63,7 @@
     }
 
     //Select all product
-    $query = "SELECT * FROM product";
+    $query = "SELECT * FROM product WHERE `Prod_Published` = 1";
 
     //Select all categories
     $query_categories = "SELECT * FROM categories";
@@ -124,7 +124,7 @@
                                         <div class="product-thumb">
                                             <div class="pro-thumb">
                                                 <img style="width: 200px; height: 180px; object-fit: contain;"
-                                                    src="assets/images/product/<?= $row['Prod_Img1'] ?>" alt="shop">
+                                                    src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="shop">
                                             </div>
                                             <div class="product-action-link">
                                                 <a href="shop-single?id=<?= $row['Prod_ID'] ?>"><i
@@ -148,7 +148,7 @@
                                     <div class="product-list-item">
                                         <div class="product-thumb">
                                             <div class="pro-thumb">
-                                                <img src="assets/images/product/<?= $row['Prod_Img1'] ?>" alt="shop">
+                                                <img src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="shop">
                                             </div>
                                             <div class="product-action-link">
                                                 <a href="#"><i class="icofont-eye"></i></a>
@@ -209,23 +209,21 @@
                         </div>
 
                         <?php
-                        $query = "SELECT * FROM product LIMIT 1";
+                        $query = "SELECT * FROM product WHERE `Prod_Published` = 1 LIMIT 2";
 
                         $result_product_recent = mysqli_query($con, $query);
-
-
-                        while ($row = mysqli_fetch_assoc($result_product_recent)) {
-                            ?>
-                            <div class="widget widget-post recent-product">
-                                <div class="widget-header">
-                                    <h5>Recent Product</h5>
-                                </div>
-                                <ul class="lab-ul widget-wrapper">
+                        ?>
+                        <div class="widget widget-post recent-product">
+                            <div class="widget-header">
+                                <h5>Recent Product</h5>
+                            </div>
+                            <ul class="lab-ul widget-wrapper">
+                                <?php while ($row = mysqli_fetch_assoc($result_product_recent)) { ?>
                                     <li class="d-flex flex-wrap justify-content-between">
                                         <div class="post-thumb">
                                             <a href="shop-single.html"><img
                                                     style="width: 200px; height: 180px; object-fit: contain;"
-                                                    src="assets/images/product/<?= $row['Prod_Img1'] ?>" alt="product"></a>
+                                                    src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="product"></a>
                                         </div>
                                         <div class="post-content ps-4">
                                             <a href="shop-single.html">
@@ -245,8 +243,8 @@
                                             </p>
                                         </div>
                                     </li>
-                                </ul>
-                            <?php } ?>
+                                <?php } ?>
+                            </ul>
                         </div>
 
                     </aside>

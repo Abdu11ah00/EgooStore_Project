@@ -56,14 +56,14 @@
   }
 
   //Select all users
-  $query = "SELECT * FROM product LIMIT 5";
+  $query = "SELECT * FROM product WHERE `Prod_Published` = 1 LIMIT 5";
   $result = mysqli_query($con, $query);
 
   ?>
 
 
   <!-- ===========Banner Section start Here========== -->
-  <div class="banner__slider overflow-hidden">
+  <!-- <div class="banner__slider overflow-hidden">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="banner" style="background-image: url(assets/images/footer/bg.jpg)">
@@ -89,7 +89,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- ===========Banner Section Ends Here========== -->
 
 
@@ -120,10 +120,10 @@
                 <div class="product-inner">
                   <div class="product-thumb">
                     <img style="width: 200px; height: 180px; object-fit: contain;"
-                      src="assets/images/product/<?= $row['Prod_Img1'] ?>" alt="product-thumb" class="w-100" />
+                      src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="product-thumb" class="w-100" />
                   </div>
                   <div class="product-content text-center p-3">
-                    <a href="#">
+                    <a href="shop-single?id=<?= $row['Prod_ID'] ?>">
                       <h5 class="product-title">
                         <?= $row['Prod_Name'] ?>
                       </h5>
