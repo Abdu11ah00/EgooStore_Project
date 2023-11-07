@@ -9,37 +9,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="partner-list" id="accordionExample">
                         <div class="row g-4 justify-content-center">
-                            <div class="col-12">
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="headingOne">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
-                                                    <img style="width: 40px; height: 60px; object-fit: contain;"
-                                                        src="assets/images/logo/ksu.png" alt="partner-thumb" />
-                                                </span>
-                                                <span class="accor-title">King Saud University</span>
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <div id="collapseOne" class="accordion-collapse collapse"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>
-                                            King Saud University (KSU) is a prominent public research university located in Riyadh
-                                            the capital city of Saudi Arabia. It is one of the oldest and most prestigious universities in the country
-                                            and is considered a leading institution of higher education in the Arab world.
-                                            KSU was established in 1957 and has since grown
-                                            into a comprehensive university with a diverse range of academic programs and research activities.
-                                            headquarters are in the city of Riyadh. It is considered the newest
-                                            Saudi bank, as it began its work in 2008.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+              
                             <div class="col-12">
                                 <div class="accordion-item">
                                     <div class="accordion-header" id="headingTwo">
