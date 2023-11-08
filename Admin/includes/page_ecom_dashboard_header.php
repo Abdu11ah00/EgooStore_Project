@@ -1,5 +1,8 @@
 <div class="content-header">
     <ul class="nav-horizontal text-center">
+        <li <?= ($act == "live_Shop") ? "class=' active'" : "" ?>>
+            <a href="page_ecom_live_shop.php"><i class="gi gi-shop_window"></i> Live Shop</a>
+        </li>
         <li <?= ($act == "dashboard") ? "class=' active'" : "" ?>>
             <a href="page_ecom_dashboard.php"><i class="fa fa-bar-chart"></i> Dashboard</a>
         </li>
