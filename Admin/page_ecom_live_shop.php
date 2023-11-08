@@ -203,10 +203,9 @@ include('./includes/header.php');
                     ?>
                     <!-- END eCommerce Dashboard Header -->
 
-
-
-
-
+                    <iframe src="../Store/index.php" height="1000px" width="100%" style="border:Auto solid red;"
+                        frameborder="0"></iframe>
+                        
                 </div>
                 <!-- END Page Content -->
 
