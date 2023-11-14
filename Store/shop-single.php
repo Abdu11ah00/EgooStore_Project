@@ -19,11 +19,67 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
 
+    <style>
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 20px;
+            width: 450px;
+            word-wrap: break-word;
+            background-color: transparent;
+            border: none;
+            -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+        }
+
+        .rating {
+            display: flex;
+            margin-top: -10px;
+            flex-direction: row-reverse;
+            margin-left: -4px;
+            float: left
+        }
+
+        .rating>input {
+            display: none
+        }
+
+        .rating>label {
+            position: relative;
+            width: 30px;
+            font-size: 40px;
+            color: #ecb341;
+            cursor: pointer;
+        }
+
+        .rating>label::before {
+            content: "\2605";
+            position: absolute;
+            opacity: 0
+        }
+
+        .rating>label:hover:before,
+        .rating>label:hover~label:before {
+            opacity: 1 !important
+        }
+
+        .rating>input:checked~label:before {
+            opacity: 1
+        }
+
+        .rating:hover>input:checked~label:before {
+            opacity: 0.4
+        }
+    </style>
+
 </head>
 
 <body>
 
     <?php
+    session_start();
+
     //Connect to DB
     include './DB-CONFIG.php';
     $con = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME);
@@ -38,10 +94,53 @@
     $result = mysqli_query($con, $select);
     $row = mysqli_fetch_assoc($result);
 
+    $select_AVG = "SELECT AVG(`Fee_Rating`), COUNT(`Fee_Rating`) FROM `feedback` WHERE `FK_Prod_ID` = '$id'";
+    $result_AVG = mysqli_query($con, $select_AVG);
+    $row_AVG = mysqli_fetch_assoc($result_AVG);
 
     $query_categories = "SELECT * FROM categories";
     $result_categories = mysqli_query($con, $query_categories);
 
+    $query_feedback = "SELECT `Fee_ID`, product.Prod_Name, customer.Cust_FName, customer.Cust_LName, `Fee_Rating`, `Fee_Commit`, `Posted_on` 
+                            FROM `feedback`, `product`, `customer` 
+                                WHERE `FK_Cust_ID` = customer.Cust_ID AND `FK_Prod_ID` = product.Prod_ID AND `FK_Prod_ID` = $id ";
+    $result_feedback = mysqli_query($con, $query_feedback);
+
+
+    if (isset($_POST['Submit_Review'])) {
+
+        if (!isset($_SESSION['Cust_ID'])) {
+            header("Location: login.php");
+            exit;
+        }
+
+        // Validation 
+        if (!(isset($_POST['massage']) && !empty($_POST['massage']))) {
+            $error_fields[] = "massage";
+        }
+        if (!(isset($_POST['rating']) && !empty($_POST['rating']))) {
+            $error_fields[] = "rating";
+        }
+
+        if (!$error_fields) {
+
+            //Escape any sepcial characters to avoid SQL Injection
+            $add_Massage = mysqli_escape_string($con, $_POST['massage']);
+            $add_rating = $_POST['rating'];
+            // if ($_POST['rating'] == '')
+            //     $add_rating = 5;
+    
+            $query_feedback = "INSERT INTO `feedback`(`Fee_ID`, `FK_Cust_ID`, `FK_Prod_ID`, `Fee_Rating`, `Fee_Commit`) 
+                                                VALUES (NULL, '3', '$id', '$add_rating', '$add_Massage')";
+            if (mysqli_query($con, $query_feedback)) {
+                header("Location: shop-single?id=" . $id);
+                exit;
+            } else {
+                echo mysqli_error($con);
+            }
+        }
+
+    }
     ?>
 
 
@@ -204,13 +303,16 @@
                                             <?= (isset($row['Prod_Name'])) ? $row['Prod_Name'] : '' ?>
                                         </h4>
                                         <p class="rating">
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            (3 review)
-                                        </p>
+                                            <?php
+                                            for ($i = 0; $i < round($row_AVG['AVG(`Fee_Rating`)']); $i++) {
+                                                ?>
+                                                <i class="icofont-star"></i>
+                                                <?php
+                                            }
+                                            ?>
+                                            (
+                                            <?= $row_AVG['COUNT(`Fee_Rating`)'] ?> review)
+                                        </p><br>
                                         <h4>$
                                             <?= (isset($row['Prod_Price'])) ? $row['Prod_Price'] : '' ?>
                                         </h4>
@@ -240,39 +342,60 @@
                         <div class="review">
                             <ul class="review-nav lab-ul">
                                 <li class="desc" data-target="description-show">Description</li>
-                                <li class="rev active" data-target="review-content-show">Reviews 4</li>
+                                <li class="rev active" data-target="review-content-show">Reviews
+                                    <?= $row_AVG['COUNT(`Fee_Rating`)'] ?>
+                                </li>
                             </ul>
 
                             <div class="review-content review-content-show">
                                 <div class="review-showing">
                                     <ul class="content lab-ul">
-                                        <li>
-                                            <div class="post-thumb">
-                                                <img src="assets/images/clients/die0.png" alt="shop">
-                                            </div>
-                                            <div class="post-content">
-                                                <div class="entry-meta">
-                                                    <div class="posted-on">
-                                                        <a href="#">Ganelon Boileau</a>
-                                                        <p>Posted on December 25, 2017 at 6:57 am</p>
+                                        <?php
+                                        // this loop to print all Feedback
+                                        while ($row = mysqli_fetch_assoc($result_feedback)) {
+                                            ?>
+
+                                            <li>
+                                                <div class="post-thumb">
+                                                    <img src="assets/images/clients/die0.png" alt="shop">
+                                                </div>
+                                                <div class="post-content">
+                                                    <div class="entry-meta">
+                                                        <div class="posted-on">
+                                                            <a href="#">
+                                                                <?= $row['Cust_FName'] . " " . $row['Cust_LName'] ?>
+                                                            </a>
+                                                            <p>Posted on December
+                                                                <?= $row['Posted_on'] ?>
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="rating">
+                                                            <?php
+                                                            for ($i = 0; $i < $row['Fee_Rating']; $i++) {
+                                                                ?>
+                                                                <i class="icofont-star"></i>
+                                                                <?php
+                                                            }
+                                                            ?>
+
+
+                                                        </div>
+
                                                     </div>
-                                                    <div class="rating">
-                                                        <i class="icofont-star"></i>
-                                                        <i class="icofont-star"></i>
-                                                        <i class="icofont-star"></i>
-                                                        <i class="icofont-star"></i>
-                                                        <i class="icofont-star"></i>
+                                                    <div class="entry-content">
+                                                        <p>
+                                                            <?= $row['Fee_Commit'] ?>
+                                                        </p>
                                                     </div>
                                                 </div>
-                                                <div class="entry-content">
-                                                    <p>Enthusiast build innovativ initiatives before lonterm
-                                                        high-impact
-                                                        awesome theme seo psd porta monetize covalent leadership
-                                                        after
-                                                        without resource.</p>
-                                                </div>
-                                            </div>
-                                        </li>
+                                            </li>
+
+                                        <?php } ?>
+
+
+
+
                                     </ul>
 
                                     <div class="client-review">
@@ -280,40 +403,38 @@
                                             <div class="review-title">
                                                 <h5>Add a Review</h5>
                                             </div>
-                                            <form action="action" class="row">
-                                                <div class="col-md-4 col-12">
-                                                    <input type="text" name="name" placeholder="Full Name">
-                                                </div>
-                                                <div class="col-md-4 col-12">
-                                                    <input type="text" name="email" placeholder="Email Adress">
-                                                </div>
+                                            <form action="" method="POST" class="row">
                                                 <div class="col-md-4 col-12">
                                                     <div class="rating">
-                                                        <span class="rating-title">Your Rating : </span>
-                                                        <ul class="lab-ul">
-                                                            <li>
-                                                                <i class="icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont-star"></i>
-                                                            </li>
-                                                        </ul>
+                                                        <input type="radio" name="rating" value="5" id="5"><label
+                                                            for="5">☆</label>
+                                                        <input type="radio" name="rating" value="4" id="4"><label
+                                                            for="4">☆</label>
+                                                        <input type="radio" name="rating" value="3" id="3"><label
+                                                            for="3">☆</label>
+                                                        <input type="radio" name="rating" value="2" id="2"><label
+                                                            for="2">☆</label>
+                                                        <input type="radio" name="rating" value="1" id="1"><label
+                                                            for="1">☆</label>
+                                                        <?php if (!isset($_POST['Submit_Review']))
+                                                            null;
+                                                        elseif (in_array("rating", $error_fields))
+                                                            echo "<div class='text-danger'> * Please Chose Rating </div><br>";
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 col-12">
-                                                    <textarea rows="5" placeholder="Type Here Message"></textarea>
+                                                    <textarea name="massage" rows="5"
+                                                        placeholder="Type Here Message"></textarea>
+                                                    <?php if (!isset($_POST['Submit_Review']))
+                                                        null;
+                                                    elseif (in_array("massage", $error_fields))
+                                                        echo "<div class='text-danger'> * Please Write Your Massage </div>";
+                                                    ?>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button class="default-button" type="submit"><span>Submit
+                                                    <button name="Submit_Review" class="default-button"
+                                                        type="submit"><span>Submit
                                                             Review</span></button>
                                                 </div>
                                             </form>
@@ -328,7 +449,8 @@
 
                                     <div class="post-item">
                                         <div class="post-thumb">
-                                            <img src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="shop">
+                                            <img src="assets/images/product/<?= (!empty($row['Prod_Img'])) ? $row['Prod_Img'] : 'no-results.png' ?>"
+                                                alt="shop">
                                         </div>
                                         <div class="post-content">
                                             <ul class="lab-ul">
@@ -398,18 +520,21 @@
                         </div>
 
                         <?php
-                        $query = "SELECT * FROM product LIMIT 1";
+                        $query = "SELECT `Prod_Name`, `Prod_Img`, `Prod_Price`, `Prod_Published`, AVG(Fee_Rating)
+                                    FROM `product`, `feedback` WHERE feedback.FK_Prod_ID = product.Prod_ID AND `Prod_Published` = 1
+                                        LIMIT 2";
 
                         $result2 = mysqli_query($con, $query);
 
-
-                        while ($row = mysqli_fetch_assoc($result2)) {
-                            ?>
-                            <div class="widget widget-post recent-product">
-                                <div class="widget-header">
-                                    <h5>Recent Product</h5>
-                                </div>
-                                <ul class="lab-ul widget-wrapper">
+                        ?>
+                        <div class="widget widget-post recent-product">
+                            <div class="widget-header">
+                                <h5>Recent Product</h5>
+                            </div>
+                            <ul class="lab-ul widget-wrapper">
+                                <?php
+                                while ($row = mysqli_fetch_assoc($result2)) {
+                                    ?>
                                     <li class="d-flex flex-wrap justify-content-between">
                                         <div class="post-thumb">
                                             <a href="shop-single.html"><img
@@ -423,19 +548,21 @@
                                                 </h6>
                                             </a>
                                             <p>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
+                                                <?php
+                                                for ($i = 0; $i < round($row['AVG(Fee_Rating)']); $i++) {
+                                                    ?>
+                                                    <i class="icofont-star"></i>
+                                                    <?php
+                                                }
+                                                ?>
                                             </p>
                                             <p class="price">$
                                                 <?= $row['Prod_Price'] ?>
                                             </p>
                                         </div>
                                     </li>
-                                </ul>
-                            <?php } ?>
+                                <?php } ?>
+                            </ul>
                         </div>
                     </aside>
                 </div>
@@ -449,6 +576,7 @@
     <?php
     mysqli_free_result($result);
     mysqli_free_result($result2);
+    mysqli_free_result($result_feedback);
     mysqli_free_result($result_categories);
     mysqli_close($con);
     ?>

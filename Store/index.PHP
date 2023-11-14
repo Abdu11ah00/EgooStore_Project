@@ -21,6 +21,16 @@
 </head>
 
 <body>
+  <?php
+  session_start();
+  ?>
+
+  <!-- ========== Add AD ========== -->
+
+  <?php include('./includes/add_AD.php'); ?>
+
+  <!-- ========== Add AD #========== -->
+
   <!-- preloader start here -->
   <div class="preloader">
     <div class="preloader-inner">

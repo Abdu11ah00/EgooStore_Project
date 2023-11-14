@@ -22,6 +22,10 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    ?>
+    
 	<!-- preloader start here -->
     <div class="preloader">
         <div class="preloader-inner">

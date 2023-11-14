@@ -8,7 +8,8 @@
                         <!-- <img style="width: 116px; height: 100px; object-fit: cover;"
                             src="./assets/images/logo/logo1.png" alt="logo"> -->
 
-                        <img style="width: 80px; height: 40px; object-fit: cover;" src="./assets/images/logo/logoup.png" alt="logo">
+                        <img style="width: 80px; height: 40px; object-fit: cover;" src="./assets/images/logo/logoup.png"
+                            alt="logo">
 
                     </a>
                 </div>
@@ -69,8 +70,13 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <a href="login.php" class="login"><i class="icofont-user"></i> <span>LOG IN</span> </a>
-                            <a href="signup.php" class="signup"><i class="icofont-users"></i> <span>SIGNUP</span></a>
+
+                            <?php if (!empty($_SESSION['Cust_ID'])): ?>
+                                <a href="logout.php" class="signup"><i class="icofont-logout"></i> <span>Log Out</span></a>
+                            <?php else: ?>
+                                <a href="login.php" class="login"><i class="icofont-user"></i> <span>LOG IN</span> </a>
+                                <a href="signup.php" class="signup"><i class="icofont-users"></i> <span>SIGNUP</span></a>
+                            <?php endif; ?>
 
                             <!-- toggle icons -->
                             <div class="header-bar d-lg-none">

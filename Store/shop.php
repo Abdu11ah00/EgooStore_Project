@@ -22,6 +22,16 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    ?>
+
+    <!-- ========== Add AD ========== -->
+
+    <?php include('./includes/add_AD.php'); ?>
+
+    <!-- ========== Add AD #========== -->
+
     <!-- preloader start here -->
     <div class="preloader">
         <div class="preloader-inner">
@@ -209,7 +219,9 @@
                         </div>
 
                         <?php
-                        $query = "SELECT * FROM product WHERE `Prod_Published` = 1 LIMIT 2";
+                        $query = "SELECT `Prod_Name`, `Prod_Img`, `Prod_Price`, `Prod_Published`, AVG(Fee_Rating)
+                                    FROM `product`, `feedback` WHERE feedback.FK_Prod_ID = product.Prod_ID AND `Prod_Published` = 1
+                                        LIMIT 3";
 
                         $result_product_recent = mysqli_query($con, $query);
                         ?>
@@ -232,11 +244,13 @@
                                                 </h6>
                                             </a>
                                             <p>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
-                                                <i class="icofont-star"></i>
+                                                <?php
+                                                for ($i = 0; $i < round($row['AVG(Fee_Rating)']); $i++) {
+                                                    ?>
+                                                    <i class="icofont-star"></i>
+                                                    <?php
+                                                }
+                                                ?>
                                             </p>
                                             <p class="price">$
                                                 <?= $row['Prod_Price'] ?>
