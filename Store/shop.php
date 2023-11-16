@@ -99,7 +99,7 @@
                 <h2 class="pageheader-title">shop page</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">shop</li>
                     </ol>
                 </nav>
@@ -128,13 +128,15 @@
                             <!-- Print all the products -->
                             <?php
                             while ($row = mysqli_fetch_assoc($result_product)) {
+                                $explode_img = explode(',', $row['Prod_Img']);
                                 ?>
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div class="product-item">
                                         <div class="product-thumb">
                                             <div class="pro-thumb">
                                                 <img style="width: 200px; height: 180px; object-fit: contain;"
-                                                    src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="shop">
+                                                    src="assets/images/product/<?= (isset($explode_img[1])) ? $explode_img[1] : $row['Prod_Img'] ?>"
+                                                    alt="shop">
                                             </div>
                                             <div class="product-action-link">
                                                 <a href="shop-single?id=<?= $row['Prod_ID'] ?>"><i
@@ -144,7 +146,7 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h5><a href="#">
+                                            <h5><a href="shop-single?id=<?= $row['Prod_ID'] ?>">
                                                     <?= $row['Prod_Name'] ?>
                                                 </a></h5>
                                             <p><i class="icofont-star"></i><i class="icofont-star"></i><i
@@ -158,16 +160,18 @@
                                     <div class="product-list-item">
                                         <div class="product-thumb">
                                             <div class="pro-thumb">
-                                                <img src="assets/images/product/<?= $row['Prod_Img'] ?>" alt="shop">
+                                                <img src="assets/images/product/<?= (isset($explode_img[1])) ? $explode_img[1] : $row['Prod_Img'] ?>"
+                                                    alt="shop">
                                             </div>
                                             <div class="product-action-link">
-                                                <a href="#"><i class="icofont-eye"></i></a>
+                                                <a href="shop-single?id=<?= $row['Prod_ID'] ?>"><i
+                                                        class="icofont-eye"></i></a>
                                                 <a href="#"><i class="icofont-heart"></i></a>
                                                 <a href="#"><i class="icofont-cart-alt"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h5><a href="#">
+                                            <h5><a href="shop-single?id=<?= $row['Prod_ID'] ?>">
                                                     <?= $row['Prod_Name'] ?>
                                                 </a></h5>
                                             <p><i class="icofont-star"></i><i class="icofont-star"></i><i
@@ -192,7 +196,7 @@
                     <aside class="ps-lg-4">
                         <div class="widget widget-search">
                             <div class="widget-header">
-                                <h5>Search Your keywords</h5>
+                                <h5>Search Your keywords "PRO"</h5>
                             </div>
                             <form action="/" class="search-wrapper">
                                 <input type="text" name="s" placeholder="Search Here...">
@@ -202,7 +206,7 @@
 
                         <div class="widget shop-widget">
                             <div class="widget-header">
-                                <h5>All Categories</h5>
+                                <h5>All Categories "PRO"</h5>
                             </div>
                             <div class="widget-wrapper">
                                 <ul class="shop-menu lab-ul">

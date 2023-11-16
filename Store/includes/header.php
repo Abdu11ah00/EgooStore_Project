@@ -44,7 +44,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="header-bottom">
+                <div class="header-bottom center-block">
                     <div class="header-wrapper justify-content-lg-end">
                         <div class="mobile-logo d-lg-none">
                             <a href="index.php"><img src="./assets/images/logo/logoup" alt="logo"></a>
@@ -52,15 +52,9 @@
                         <div class="menu-area">
                             <ul class="menu">
                                 <li><a href="index.php">Home</a></li>
-                                <li>
-                                    <a href="#0">accounts</a>
-                                    <ul class="submenu">
-                                        <li><a href="login.php">login</a></li>
-                                        <li><a href="signup.php">signup</a></li>
-                                    </ul>
-                                </li>
+
                                 <li><a href="shop.php">shop</a></li>
-                                <li><a href="cart-page.php">Cart Page</a></li>
+                                <li><a href="cart-page.php">Cart Page &nbsp;"PRO"</a></li>
                                 <li>
                                     <a href="#0" class="active">More</a>
                                     <ul class="submenu">
@@ -72,7 +66,43 @@
                             </ul>
 
                             <?php if (!empty($_SESSION['Cust_ID'])): ?>
-                                <a href="logout.php" class="signup"><i class="icofont-logout"></i> <span>Log Out</span></a>
+                                <div class="menu-area rotateInDownLeft">
+
+                                    <!-- Right Header Navigation -->
+                                    <ul class="menu">
+                                        <!-- User Dropdown -->
+                                        <li class="dropdown">
+                                            <a href="#" class="" data-toggle="dropdown" role="button">
+                                                <img style="width: 40px; height: 40px"
+                                                    src="./assets/images/clients/<?= (!empty($_SESSION['Cust_Img'])) ? $_SESSION['Cust_Img'] : 'unknown.png' ?>"
+                                                    alt="avatar"> <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="submenu">
+                                                <li class="dropdown-header text-center fa-1000px">Account</li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fa fa-user fa-fw pull-right"></i>
+                                                        Profile "PRO"
+                                                    </a>
+                                                    <a href="#" data-toggle="modal">
+                                                        <i class="fa fa-cog fa-fw pull-right"></i>
+                                                        Settings "PRO"
+                                                    </a>
+                                                </li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <a href="logout.php"><i class="fa fa-ban fa-fw pull-right"></i>
+                                                        Logout</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- END User Dropdown -->
+                                    </ul>
+                                </div>
+                                <div>
+                                    <?= $_SESSION['Cust_Email'] ?>
+                                </div>
                             <?php else: ?>
                                 <a href="login.php" class="login"><i class="icofont-user"></i> <span>LOG IN</span> </a>
                                 <a href="signup.php" class="signup"><i class="icofont-users"></i> <span>SIGNUP</span></a>

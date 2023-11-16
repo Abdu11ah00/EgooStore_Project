@@ -226,12 +226,12 @@ include('./includes/header.php');
 
                                                 <div class="col-sm-4">
                                                     <?php if (!empty($img)): ?>
-                                                        <a href="img/product/<?= $img ?>" class="gallery-link"
+                                                        <a href="..\Store\assets\images\product\<?= $img ?>" class="gallery-link"
                                                             title="Image Info">
-                                                            <img src="img/product/<?= $img ?>" alt="image">
+                                                            <img src="..\Store\assets\images\product\<?= $img ?>" alt="Image Info">
                                                         </a>
                                                     <?php else: ?>
-                                                        <img src="img/product/nothing_img.png" alt="image" />
+                                                        <img src="..\Store\assets\images\product\no-results.png" alt="image" />
                                                     <?php endif; ?>
                                                 </div>
 

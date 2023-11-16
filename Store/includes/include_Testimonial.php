@@ -2,7 +2,7 @@
     style="background-image: url(assets/images/testimonial/bg.png)">
     <div class="container">
         <div class="section-header">
-            <p>our recent news</p>
+            <p>our recent news "PRO"</p>
             <h2>Our Most Popular testimonial posts</h2>
         </div>
         <div class="section-wrapper">

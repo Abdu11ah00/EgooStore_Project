@@ -134,7 +134,7 @@ include('./includes/header.php');
                 if (empty($errors)):
 
                     // Move The Files
-                    $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '\My_Projects\OunProject1\EgoStore_Main_HTML_Template\Store\assets\images\product\\';
+                    $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '\EgooStose_Project\Store\assets\images\product\\';
                     move_uploaded_file($img_tmp[$i], "$uploads_dir/$img_name[$i]" . "$img_random[$i]");
 
                     // **if You Want To Upload These Accepted Files

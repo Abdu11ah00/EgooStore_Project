@@ -4,13 +4,13 @@
             <a href="page_ecom_live_shop.php"><i class="gi gi-shop_window"></i> Live Shop</a>
         </li>
         <li <?= ($act == "dashboard") ? "class=' active'" : "" ?>>
-            <a href="page_ecom_dashboard.php"><i class="fa fa-bar-chart"></i> Dashboard</a>
+            <a href="page_ecom_dashboard.php"><i class="fa fa-bar-chart"></i> Dashboard "PRO"</a>
         </li>
         <li <?= ($act == "Orders") ? "class=' active'" : "" ?>>
-            <a href="page_ecom_orders.php"><i class="gi gi-shop_window"></i> Orders</a>
+            <a href="page_ecom_orders.php"><i class="gi gi-shop_window"></i> Orders "PRO"</a>
         </li>
         <li <?= ($act == "Order_View") ? "class=' active'" : "" ?>>
-            <a href="page_ecom_order_view.php"><i class="gi gi-shopping_cart"></i> Order View</a>
+            <a href="page_ecom_order_view.php"><i class="gi gi-shopping_cart"></i> Order View "PRO"</a>
         </li>
         <li <?= ($act == "Product") ? "class=' active'" : "" ?>>
             <a href="page_ecom_products.php"><i class="gi gi-shopping_bag"></i> Products</a>

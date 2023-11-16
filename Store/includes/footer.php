@@ -92,7 +92,7 @@
                         <div class="footer-middle-item-wrapper">
                             <div class="footer-middle-item-3 mb-lg-0">
                                 <div class="fm-item-title">
-                                    <h4>Our Newsletter</h4>
+                                    <h4>Our Newsletter "PRO"</h4>
                                 </div>
                                 <div class="fm-item-content">
                                     <p>EgooStore organization supported by community leaders</p>
@@ -118,7 +118,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="footer-bottom-content text-center">
-                            <p>&copy;2021 <a href="index.php">EgooStore</a> - EgooStore And Gameing HTML Template.</p>
+                            <p>&copy;2023 <a href="index.php">EgooStore</a> - EgooStore a Digital Store.</p>
                         </div>
                     </div>
                 </div>

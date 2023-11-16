@@ -157,7 +157,7 @@ include('./includes/header.php');
 
                                 <!-- Employee Addresses Title -->
                                 <div class="block-title">
-                                    <h2><i class="fa fa-building-o"></i> <strong>Admin</strong> Address </h2>
+                                    <h2><i class="fa fa-building-o"></i> <strong>Admin</strong> Address  "PRO"</h2>
                                 </div>
                                 <!-- END Employee Addresses Title -->
 
@@ -245,7 +245,7 @@ include('./includes/header.php');
                                     <div class="block-options pull-right">
                                         <span class="label label-default"><strong> 3 H</strong></span>
                                     </div>
-                                    <h2><i class="fa fa-truck"></i> <strong>Log Admin</strong></h2>
+                                    <h2><i class="fa fa-truck"></i> <strong>Log Admin "PRO"</strong></h2>
                                 </div>
                                 <!-- END log Admin Title -->
 
@@ -303,7 +303,7 @@ include('./includes/header.php');
                                     <div class="block-options pull-right">
                                         <span class="label label-success"><strong>$ 2125,00</strong></span>
                                     </div>
-                                    <h2><i class="fa fa-truck"></i> <strong>Complete Orders Work</strong> (4)</h2>
+                                    <h2><i class="fa fa-truck"></i> <strong>Complete Orders Work</strong> (4)  "PRO"</h2>
                                 </div>
                                 <!-- END Orders Title -->
 
@@ -377,7 +377,7 @@ include('./includes/header.php');
                                     <div class="block-options pull-right">
                                         <span class="label label-success"><strong>$ 517,00</strong></span>
                                     </div>
-                                    <h2><i class="fa fa-shopping-cart"></i> <strong>Products Work</strong> Created (3)
+                                    <h2><i class="fa fa-shopping-cart"></i> <strong>Products Work</strong> Created (3)  "PRO"
                                     </h2>
                                 </div>
                                 <!-- END Products in Cart Title -->
@@ -440,7 +440,7 @@ include('./includes/header.php');
                             <div class="block full">
                                 <!-- Private Notes Title -->
                                 <div class="block-title">
-                                    <h2><i class="fa fa-file-text-o"></i> <strong>Private</strong> Notes</h2>
+                                    <h2><i class="fa fa-file-text-o"></i> <strong>Private</strong> Notes  "PRO"</h2>
                                 </div>
                                 <!-- END Private Notes Title -->
 

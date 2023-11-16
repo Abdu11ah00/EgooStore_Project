@@ -13,7 +13,8 @@
             <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
                 <div class="sidebar-user-avatar">
                     <a href="page_ready_user_profile.php">
-                        <img style="width: 65px; height: 65px" src="img/Personal_Photos/<?= $_SESSION['A_Photo'] ?>" alt="avatar">
+                        <img style="width: 65px; height: 65px" src="img/Personal_Photos/<?= $_SESSION['A_Photo'] ?>"
+                            alt="avatar">
                     </a>
                 </div>
                 <div class="sidebar-user-name">
@@ -39,7 +40,7 @@
                 <li>
                     <a href="index.php" <?= ($active == "index") ? "class=' active'" : "" ?>><i
                             class="gi gi-stopwatch sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Dashboard</span></a>
+                            class="sidebar-nav-mini-hide">Dashboard "PRO"</span></a>
                 </li>
 
                 <li class="sidebar-header">
@@ -49,14 +50,14 @@
                 </li>
                 <li>
                     <a href="page_ecom_dashboard.php" <?= ($active == "dashboard") ? "class=' active'" : "" ?>><span
-                            class="sidebar-nav-mini-hide">Dashboard </span></a>
+                            class="sidebar-nav-mini-hide">Dashboard "PRO"</span></a>
                 </li>
                 <li>
-                    <a href="page_ecom_orders.php" <?= ($active == "Orders") ? "class=' active'" : "" ?>>Orders</a>
+                    <a href="page_ecom_orders.php" <?= ($active == "Orders") ? "class=' active'" : "" ?>>Orders "PRO"</a>
                 </li>
                 <li>
                     <a href="page_ecom_order_view.php" <?= ($active == "order_view") ? "class=' active'" : "" ?>>Order
-                        View</a>
+                        View "PRO"</a>
                 </li>
                 <li>
                     <a href="page_ecom_products.php" <?= ($active == "products") ? "class=' active'" : "" ?>>Products</a>
@@ -78,16 +79,17 @@
                 </li>
                 <li>
                     <a href="page_ready_user_profile.php" <?= ($active == "user_profile") ? "class=' active'" : "" ?>>User
-                        Profile</a>
+                        Profile "PRO"</a>
                 </li>
                 <li>
-                    <a href="page_ready_timeline.php" <?= ($active == "timeline") ? "class=' active'" : "" ?>>Timeline</a>
+                    <a href="page_ready_timeline.php" <?= ($active == "timeline") ? "class=' active'" : "" ?>>Timeline
+                        "PRO"</a>
                 </li>
                 <li>
-                    <a href="page_ready_faq.php" <?= ($active == "faq") ? "class=' active'" : "" ?>>FAQ</a>
+                    <a href="page_ready_faq.php" <?= ($active == "faq") ? "class=' active'" : "" ?>>FAQ "PRO"</a>
                 </li>
                 <li>
-                    <a href="page_ready_inbox.php" <?= ($active == "inbox") ? "class=' active'" : "" ?>>Inbox</a>
+                    <a href="page_ready_inbox.php" <?= ($active == "inbox") ? "class=' active'" : "" ?>>Inbox "PRO"</a>
                 </li>
 
                 <?php
@@ -105,10 +107,6 @@
                     <li>
                         <a href="page_ecom_Admin_view.php" <?= ($active == "Emp_list") ? "class=' active'" : "" ?>>Employees
                             List</a>
-                    </li>
-                    <li>
-                        <a href="#" <?= ($active == "") ? "class=' active'" : "" ?>>User
-                            Profile</a>
                     </li>
 
                     <?php

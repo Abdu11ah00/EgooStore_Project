@@ -60,24 +60,24 @@
                     <a href="page_ready_timeline.php">
                         <i class="fa fa-clock-o fa-fw pull-right"></i>
                         <span class="badge pull-right">10</span>
-                        Updates
+                        Updates "PRO"
                     </a>
                     <a href="page_ready_inbox.php">
                         <i class="fa fa-envelope-o fa-fw pull-right"></i>
                         <span class="badge pull-right">5</span>
-                        Messages
+                        Messages "PRO"
                     </a>
 
                     <a href="page_ready_faq.php"><i class="fa fa-question fa-fw pull-right"></i>
                         <span class="badge pull-right">11</span>
-                        FAQ
+                        FAQ "PRO"
                     </a>
                 </li>
                 <li class="divider"></li>
                 <li>
                     <a href="page_ready_user_profile.php">
                         <i class="fa fa-user fa-fw pull-right"></i>
-                        Profile
+                        Profile "PRO"
                     </a>
                     <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
                     <a href="#modal-user-settings" data-toggle="modal">
