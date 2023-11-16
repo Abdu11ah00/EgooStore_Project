@@ -18,6 +18,9 @@
         <li <?= ($act == "Product_Add") ? "class=' active'" : "" ?>>
             <a href="page_ecom_product_add.php"><i class="gi gi-inbox_plus"></i> Product Add</a>
         </li>
+        <li <?= ($act == "ad") ? "class=' active'" : "" ?>>
+            <a href="page_ecom_ad_add.php"><i class="fa fa-bullhorn"></i> Add ad</a>
+        </li>
         <li <?= ($act == "Categories_Add") ? "class=' active'" : "" ?>>
             <a href="page_ecom_Categories_add.php"><i class="gi gi-server_plus"></i> Categories Operations</a>
         </li>

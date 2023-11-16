@@ -39,8 +39,8 @@
             <ul class="sidebar-nav">
                 <li>
                     <a href="index.php" <?= ($active == "index") ? "class=' active'" : "" ?>><i
-                            class="gi gi-stopwatch sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Dashboard "PRO"</span></a>
+                            class="gi gi-stopwatch sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dashboard
+                            "PRO"</span></a>
                 </li>
 
                 <li class="sidebar-header">
@@ -65,6 +65,9 @@
                 <li>
                     <a href="page_ecom_product_add.php" <?= ($active == "product_add") ? "class=' active'" : "" ?>>Product
                         Add</a>
+                </li>
+                <li>
+                    <a href="page_ecom_ad_add.php" <?= ($active == "ad") ? "class=' active'" : "" ?>>Add ad</a>
                 </li>
                 <li>
                     <a href="page_ecom_Categories_add.php" <?= ($active == "Categories_add") ? "class=' active'" : "" ?>>Categories View and Add</a>

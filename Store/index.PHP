@@ -23,6 +23,7 @@
 <body>
   <?php
   session_start();
+  include './DB-CONFIG.php';
   ?>
 
   <!-- ========== Add AD ========== -->
@@ -58,7 +59,6 @@
 
   <?php
   //Connect to MySQL
-  include './DB-CONFIG.php';
   $con = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME);
   if (!$con) {
     echo mysqli_connect_errno();
