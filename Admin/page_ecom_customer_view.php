@@ -54,113 +54,77 @@ include('./includes/header.php');
                     ?>
                     <!-- END eCommerce Customer Header -->
 
-                    <!-- Datatables Header -->
-                    <div class="content-header">
-                        <div class="header-section">
-                            <h1>
-                                <i class="fa fa-table"></i>Datatables<br><small>HTML tables can become fully dynamic
-                                    with cool features!</small>
-                            </h1>
-                        </div>
-                    </div>
-                    <ul class="breadcrumb breadcrumb-top">
-                        <li>Tables</li>
-                        <li><a href="">Datatables</a></li>
-                    </ul>
-                    <!-- END Datatables Header -->
-
                     <!-- Datatables Content -->
                     <div class="block full">
                         <div class="block-title">
-                            <h2><strong>Datatables</strong> integration</h2>
+                            <h2><strong>Customer</strong> List</h2>
                         </div>
-                        <p><a href="https://datatables.net/" target="_blank">DataTables</a> is a plug-in for the
-                            Jquery Javascript library. It is a highly flexible tool, based upon the foundations of
-                            progressive enhancement, which will add advanced interaction controls to any HTML table.
-                            It is integrated with template's design and it offers many features such as on-the-fly
-                            filtering and variable length pagination.</p>
+
+                        <?php
+                        //Connect to MySQL
+                        include './DB-CONFIG.php';
+                        $con = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME);
+                        if (!$con) {
+                            echo mysqli_connect_errno();
+                            exit;
+                        }
+                        $query_Customer = "SELECT * FROM `customer`";
+                        $result_customer = mysqli_query($con, $query_Customer);
+                        ?>
 
                         <div class="table-responsive">
                             <table id="example-datatable" class="table table-bordered table-striped table-vcenter">
                                 <thead>
                                     <tr>
+                                        <th class="text-center">#</th>
                                         <th class="text-center">ID</th>
                                         <th class="text-center"><i class="gi gi-user"></i></th>
-                                        <th>Client</th>
+                                        <th>Customer Name</th>
                                         <th>Email</th>
                                         <th>Subscription</th>
                                         <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td class="text-center"><img src="img/placeholders/avatars/avatar15.jpg"
-                                                alt="avatar" class="img-circle"></td>
-                                        <td><a href="javascript:void(0)">client1</a></td>
-                                        <td>client1@company.com</td>
-                                        <td><span class="label label-info">Business</span></td>
-                                        <td class="text-center">
-                                            <div class="btn-group">
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit"
-                                                    class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete"
-                                                    class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td class="text-center"><img src="img/placeholders/avatars/avatar2.jpg"
-                                                alt="avatar" class="img-circle"></td>
-                                        <td><a href="javascript:void(0)">client2</a></td>
-                                        <td>client2@company.com</td>
-                                        <td><span class="label label-primary">Personal</span></td>
-                                        <td class="text-center">
-                                            <div class="btn-group">
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit"
-                                                    class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete"
-                                                    class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="text-center">6</td>
-                                        <td class="text-center"><img src="img/placeholders/avatars/avatar13.jpg"
-                                                alt="avatar" class="img-circle"></td>
-                                        <td><a href="javascript:void(0)">client6</a></td>
-                                        <td>client6@company.com</td>
-                                        <td><span class="label label-success">VIP</span></td>
-                                        <td class="text-center">
-                                            <div class="btn-group">
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit"
-                                                    class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete"
-                                                    class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">7</td>
-                                        <td class="text-center"><img src="img/placeholders/avatars/avatar8.jpg"
-                                                alt="avatar" class="img-circle"></td>
-                                        <td><a href="javascript:void(0)">client7</a></td>
-                                        <td>client7@company.com</td>
-                                        <td><span class="label label-warning">Trial</span></td>
-                                        <td class="text-center">
-                                            <div class="btn-group">
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit"
-                                                    class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete"
-                                                    class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <?php $i = 0;
+                                    while ($row = mysqli_fetch_assoc($result_customer)) {
+                                        $i++; ?>
+                                        <tr>
+                                            <td class="text-center">
+                                                <?= $i ?>
+                                            </td>
+                                            <td class="text-center"><strong style="color:#1bbae1;">CID.
+                                                    <?= $row['Cust_ID'] ?>
+                                                </strong></td>
+                                            <td class="text-center"><img style="width: 55px; height: 55px"
+                                                    src="..\Store\assets\images\clients\<?= (!empty($row['Cust_Img'])) ? $row['Cust_Img'] : 'unknown.png' ?>"
+                                                    alt="avatar" class="img-circle"></td>
+                                            <td><a href="page_ecom_customer_single_view.php?id=<?= $row['Cust_ID'] ?>">
+                                                    <?= $row['Cust_FName'] . " " . $row['Cust_LName'] ?>
+                                                </a></td>
+                                            <td>
+                                                <?= $row['Cust_Email'] ?>
+                                            </td>
+                                            <td><span class="label label-info">Active</span></td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <a href="page_ecom_customer_single_view.php?id=<?= $row['Cust_ID'] ?>"
+                                                        data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i
+                                                            class="fa fa-eye"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
+
+                        <?php
+                        mysqli_free_result($result_customer);
+
+                        // Close the connection
+                        mysqli_close($con);
+                        ?>
                     </div>
                     <!-- END Datatables Content -->
 
