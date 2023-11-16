@@ -142,11 +142,17 @@
                       <?= $row['Prod_Price'] ?>
                     </h5>
                     <div class="rating">
-                      <i class="icofont-ui-rating"></i>
-                      <i class="icofont-ui-rating"></i>
-                      <i class="icofont-ui-rating"></i>
-                      <i class="icofont-ui-rating"></i>
-                      <i class="icofont-ui-rating"></i>
+                      <?php
+                      $select_AVG = "SELECT AVG(`Fee_Rating`), COUNT(`Fee_Rating`) FROM `feedback` WHERE `FK_Prod_ID` = '" . $row['Prod_ID'] . "'";
+                      $result_AVG = mysqli_query($con, $select_AVG);
+                      $row_AVG = mysqli_fetch_assoc($result_AVG);
+
+                      for ($i = 0; $i < round($row_AVG['AVG(`Fee_Rating`)']); $i++) {
+                        ?>
+                        <i class="icofont-star"></i>
+                        <?php
+                      }
+                      ?>
                     </div>
                   </div>
                 </div>
@@ -175,6 +181,7 @@
 
   <!-- ===========Testimonial Section Ends Here========== -->
   <?php
+  mysqli_free_result($result_AVG);
   mysqli_free_result($result);
   mysqli_close($con);
   ?>

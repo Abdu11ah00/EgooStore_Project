@@ -101,7 +101,7 @@
     $query_categories = "SELECT * FROM categories";
     $result_categories = mysqli_query($con, $query_categories);
 
-    $query_feedback = "SELECT `Fee_ID`, product.Prod_Name, customer.Cust_FName, customer.Cust_LName, `Fee_Rating`, `Fee_Commit`, `Posted_on` 
+    $query_feedback = "SELECT `Fee_ID`, product.Prod_Name, customer.Cust_FName, customer.Cust_LName, customer.Cust_Img,`Fee_Rating`, `Fee_Commit`, `Posted_on` 
                             FROM `feedback`, `product`, `customer` 
                                 WHERE `FK_Cust_ID` = customer.Cust_ID AND `FK_Prod_ID` = product.Prod_ID AND `FK_Prod_ID` = $id ";
     $result_feedback = mysqli_query($con, $query_feedback);
@@ -112,33 +112,35 @@
         if (!isset($_SESSION['Cust_ID'])) {
             header("Location: login.php");
             exit;
-        }
+        } else {
 
-        // Validation 
-        if (!(isset($_POST['massage']) && !empty($_POST['massage']))) {
-            $error_fields[] = "massage";
-        }
-        if (!(isset($_POST['rating']) && !empty($_POST['rating']))) {
-            $error_fields[] = "rating";
-        }
-
-        if (!$error_fields) {
-
-            //Escape any sepcial characters to avoid SQL Injection
-            $add_Massage = mysqli_escape_string($con, $_POST['massage']);
-            $add_rating = $_POST['rating'];
-            // if ($_POST['rating'] == '')
-            //     $add_rating = 5;
-    
-            $query_feedback = "INSERT INTO `feedback`(`Fee_ID`, `FK_Cust_ID`, `FK_Prod_ID`, `Fee_Rating`, `Fee_Commit`) 
-                                                VALUES (NULL, '3', '$id', '$add_rating', '$add_Massage')";
-            if (mysqli_query($con, $query_feedback)) {
-                header("Location: shop-single?id=" . $id);
-                exit;
-            } else {
-                echo mysqli_error($con);
+            // Validation 
+            if (!(isset($_POST['massage']) && !empty($_POST['massage']))) {
+                $error_fields[] = "massage";
             }
+            if (!(isset($_POST['rating']) && !empty($_POST['rating']))) {
+                $error_fields[] = "rating";
+            }
+
+            if (!$error_fields) {
+
+                //Escape any sepcial characters to avoid SQL Injection
+                $add_Massage = mysqli_escape_string($con, $_POST['massage']);
+                $add_rating = $_POST['rating'];
+                $add_Cust_ID = $_SESSION['Cust_ID'];
+
+                $query_feedback = "INSERT INTO `feedback`(`Fee_ID`, `FK_Cust_ID`, `FK_Prod_ID`, `Fee_Rating`, `Fee_Commit`) 
+                                                    VALUES (NULL, '$add_Cust_ID', '$id', '$add_rating', '$add_Massage')";
+                if (mysqli_query($con, $query_feedback)) {
+                    header("Location: shop-single?id=" . $id);
+                    exit;
+                } else {
+                    echo mysqli_error($con);
+                }
+            }
+
         }
+
 
     }
     ?>
@@ -183,7 +185,7 @@
                 <h2 class="pageheader-title">our Shop Single</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="shop.php">Shop</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Shop Single</li>
                     </ol>
                 </nav>
@@ -207,90 +209,59 @@
                                 <div class="col-md-6 col-12">
                                     <div class="product-thumb">
 
-
                                         <?php
-                                        // 1- Image Viewer
-                                        
-                                        /*This if statement is that 
-                                            if there is only one image, it's displayed in a specific design"without the image scrolling and button",,
-                                            another way, if there're tow or more images, it's displayed with another design. */
-                                        if (isset($row['Prod_Img1']) && isset($row['Prod_Img2']) && isset($row['Prod_Img3'])) {
-                                            echo "<div class='swiper-container pro-single-top'>
-                                            <div class='swiper-wrapper'>";
+                                        $explode_img = explode(',', $row['Prod_Img']);
 
-                                            for ($i = 1; $i <= 3; $i++) {
-                                                $img = "Prod_Img" . $i;
-                                                echo "<div class='swiper-slide'>
-                                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
-                                                            </div>";
-                                            }
+                                        $img_count = count($explode_img);
+                                        if (1 == $img_count): ?>
+                                            <div class="swiper-container pro-single-top">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="single-thumb"><img
+                                                                src=".\assets\images\product\<?= $row['Prod_Img'] ?>"
+                                                                alt="Product Image"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                            echo "</div>
-                                        </div>";
-                                        } else if (isset($row['Prod_Img1']) && isset($row['Prod_Img2'])) {
-                                            echo "<div class='swiper-container pro-single-top'>
-                                            <div class='swiper-wrapper'>";
-                                            for ($i = 1; $i <= 2; $i++) {
-                                                $img = "Prod_Img" . $i;
-                                                echo "<div class='swiper-slide'>
-                                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
-                                                            </div>";
-                                            }
+                                            <?php
+                                        elseif ($img_count >= 2):
+                                            ?>
+                                            <div class="swiper-container pro-single-top">
+                                                <div class="swiper-wrapper">
+                                                    <?php
+                                                    foreach ($explode_img as $img):
+                                                        ?>
+                                                        <div class="swiper-slide">
+                                                            <div class="single-thumb"><img
+                                                                    src=".\assets\images\product\<?= $img ?>"
+                                                                    alt="Product Image"></div>
+                                                        </div>
+                                                        <?php
+                                                    endforeach;
+                                                    ?>
+                                                </div>
+                                            </div>
 
-                                            echo "</div>
-                                        </div>";
-                                        } else if (isset($row['Prod_Img'])) {
-                                            echo "<div class='swiper-container pro-single-top'>
-                                                <div class='swiper-wrapper'>";
+                                            <div class="swiper-container pro-single-thumbs">
+                                                <div class="swiper-wrapper">
+                                                    <?php
+                                                    foreach ($explode_img as $img):
+                                                        ?>
+                                                        <div class="swiper-slide">
+                                                            <div class="single-thumb"><img src=".\assets\images\product\<?= $img ?>"
+                                                                    alt="shop"></div>
+                                                        </div>
+                                                        <?php
+                                                    endforeach;
+                                                    ?>
+                                                </div>
+                                            </div>
 
-                                            echo "<div class='swiper-slide'>
-                                                    <div class='single-thumb'><img src='assets/images/product/" . $row['Prod_Img'] . "' alt='shop'></div>
-                                                    </div>";
+                                            <div class="pro-single-next"><i class="icofont-rounded-left"></i></div>
+                                            <div class="pro-single-prev"><i class="icofont-rounded-right"></i></div>
 
-                                            echo "</div>
-                                        </div>";
-                                        } else {
-                                            echo "";
-                                        }
-                                        ?>
-
-                                        <?php
-                                        // 2- To Change the image by scrolling and button
-                                        
-                                        if (isset($row['Prod_Img1']) && isset($row['Prod_Img2']) && isset($row['Prod_Img3'])) {
-                                            echo "<div class='swiper-container pro-single-thumbs'>
-                                            <div class='swiper-wrapper'>";
-
-                                            for ($i = 1; $i <= 3; $i++) {
-                                                $img = "Prod_Img" . $i;
-                                                echo "<div class='swiper-slide'>
-                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
-                                            </div>";
-                                            }
-
-                                            echo "</div>
-                                        </div>";
-                                            echo "<div class='pro-single-next'><i class='icofont-rounded-left'></i></div>
-                                            <div class='pro-single-prev'><i class='icofont-rounded-right'></i></div>";
-
-                                        } else if (isset($row['Prod_Img1']) && isset($row['Prod_Img2'])) {
-                                            echo "<div class='swiper-container pro-single-thumbs'>
-                                            <div class='swiper-wrapper'>";
-                                            for ($i = 1; $i <= 2; $i++) {
-                                                $img = "Prod_Img" . $i;
-                                                echo "<div class='swiper-slide'>
-                                            <div class='single-thumb'><img src='assets/images/product/tmp/" . $row[$img] . "' alt='shop'></div>
-                                            </div>";
-                                            }
-
-                                            echo "</div>
-                                        </div>";
-                                            echo "<div class='pro-single-next'><i class='icofont-rounded-left'></i></div>
-                                        <div class='pro-single-prev'><i class='icofont-rounded-right'></i></div>";
-                                        } else {
-                                            echo "";
-                                        }
-                                        ?>
+                                        <?php endif; ?>
 
                                     </div>
                                 </div>
@@ -352,27 +323,28 @@
                                     <ul class="content lab-ul">
                                         <?php
                                         // this loop to print all Feedback
-                                        while ($row = mysqli_fetch_assoc($result_feedback)) {
+                                        while ($row2 = mysqli_fetch_assoc($result_feedback)) {
                                             ?>
 
                                             <li>
                                                 <div class="post-thumb">
-                                                    <img src="assets/images/clients/die0.png" alt="shop">
+                                                    <img src="./assets/images/clients/<?= (!empty($row2['Cust_Img'])) ? $row2['Cust_Img'] : 'unknown.png' ?>"
+                                                        alt="Personal Img">
                                                 </div>
                                                 <div class="post-content">
                                                     <div class="entry-meta">
                                                         <div class="posted-on">
                                                             <a href="#">
-                                                                <?= $row['Cust_FName'] . " " . $row['Cust_LName'] ?>
+                                                                <?= $row2['Cust_FName'] . " " . $row2['Cust_LName'] ?>
                                                             </a>
                                                             <p>Posted on December
-                                                                <?= $row['Posted_on'] ?>
+                                                                <?= $row2['Posted_on'] ?>
                                                             </p>
                                                         </div>
 
                                                         <div class="rating">
                                                             <?php
-                                                            for ($i = 0; $i < $row['Fee_Rating']; $i++) {
+                                                            for ($i = 0; $i < $row2['Fee_Rating']; $i++) {
                                                                 ?>
                                                                 <i class="icofont-star"></i>
                                                                 <?php
@@ -385,7 +357,7 @@
                                                     </div>
                                                     <div class="entry-content">
                                                         <p>
-                                                            <?= $row['Fee_Commit'] ?>
+                                                            <?= $row2['Fee_Commit'] ?>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -446,19 +418,21 @@
                                     <p>
                                         <?= (isset($row['Prod_Short_Desc'])) ? $row['Prod_Short_Desc'] : '' ?>
                                     </p>
-
+                                    <?php 
+                                    // if there is more than one img, the first img is taken.
+                                    $explode_img = explode(',', $row['Prod_Img']);?>
                                     <div class="post-item">
                                         <div class="post-thumb">
-                                            <img src="assets/images/product/<?= (!empty($row['Prod_Img'])) ? $row['Prod_Img'] : 'no-results.png' ?>"
+                                            <img src="assets/images/product/<?= (isset($explode_img[1])) ? $explode_img[1] : $row['Prod_Img'] ?>"
                                                 alt="shop">
                                         </div>
                                         <div class="post-content">
                                             <ul class="lab-ul">
                                                 <li>
-                                                    Donec non est at libero vulputate rutrum.
+                                                    "PRO" Donec non est at libero vulputate rutrum. 
                                                 </li>
                                                 <li>
-                                                    Morbi ornare lectus quis justo gravida semper.
+                                                    Morbi ornare lectus quis justo gravida semper. 
                                                 </li>
                                                 <li>
                                                     Pellentesque aliquet, sem eget laoreet ultrices.
@@ -493,7 +467,7 @@
                     <aside class="ps-lg-4">
                         <div class="widget widget-search">
                             <div class="widget-header">
-                                <h5>Search Your keywords</h5>
+                                <h5>Search Your keywords "PRO"</h5>
                             </div>
                             <form action="/" class="search-wrapper">
                                 <input type="text" name="s" placeholder="Search Here...">
@@ -503,7 +477,7 @@
 
                         <div class="widget shop-widget">
                             <div class="widget-header">
-                                <h5>All Categories</h5>
+                                <h5>All Categories "PRO"</h5>
                             </div>
                             <div class="widget-wrapper">
                                 <ul class="shop-menu lab-ul">
@@ -577,6 +551,7 @@
     mysqli_free_result($result);
     mysqli_free_result($result2);
     mysqli_free_result($result_feedback);
+    mysqli_free_result($result_AVG);
     mysqli_free_result($result_categories);
     mysqli_close($con);
     ?>
