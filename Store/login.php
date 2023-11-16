@@ -63,6 +63,7 @@
                     $_SESSION['Cust_FName'] = $row['Cust_FName'];
                     $_SESSION['Cust_LName'] = $row['Cust_LName'];
                     $_SESSION['Cust_Email'] = $row['Cust_Email'];
+                    $_SESSION['Cust_Img'] = $row['Cust_Img'];
                     $_SESSION["user_error"][] = array();
                     header("Location: index.php");
                     exit;

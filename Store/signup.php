@@ -65,7 +65,7 @@
             $error_fields[] = "empty";
         } else {
             // Check fils size
-            if ($_FILES["avatar"]['size'] > 80000) {
+            if ($_FILES["avatar"]['size'] > 800000) {
                 $error_fields[] = "file_size";
             }
             // Check if File is valid
@@ -96,17 +96,20 @@
             $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '\EgooStose_Project\Store\assets\images\clients\\';
             $avatar = '';
             if ($_FILES["avatar"]['error'] == UPLOAD_ERR_OK) {
+                // Get Random Number For File
+                $img_random_no = rand(0, 10000000000) . '.' . $image_extension;
                 $tmp_name = $_FILES["avatar"]["tmp_name"];
                 $avatar = basename($_FILES["avatar"]["name"]);
-                move_uploaded_file($tmp_name, "$uploads_dir/$C_Email.$avatar");
+                $new_img_name = $C_Email . $avatar . $img_random_no;
+                move_uploaded_file($tmp_name, "$uploads_dir/$new_img_name");
             } else {
                 echo "File can't be uploaded";
                 exit;
             }
 
             //Insert the data
-            $query = "INSERT INTO `customer` (`Cust_ID`, `Cust_FName`, `Cust_LName`, `Cust_BirthDate`, `Cust_Email`, `Cust_PSW`, `Cust_Register`)
-                                VALUES (NULL, '$C_FName', '$C_LName', '$C_birthday', '$C_Email', '$C_Password', CURRENT_TIMESTAMP);";
+            $query = "INSERT INTO `customer` (`Cust_ID`, `Cust_FName`, `Cust_LName`, `Cust_BirthDate`, `Cust_Email`, `Cust_PSW`, `Cust_Img`, `Cust_Register`)
+                                VALUES (NULL, '$C_FName', '$C_LName', '$C_birthday', '$C_Email', '$C_Password', '$new_img_name', CURRENT_TIMESTAMP);";
             if (mysqli_query($con, $query)) {
                 header("Location: index.php");
                 exit;
@@ -167,7 +170,7 @@
                 <h2 class="pageheader-title">Registration Page</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Registration</li>
                     </ol>
                 </nav>
@@ -183,7 +186,7 @@
         <div class=" container">
             <div class="account-wrapper">
                 <h3 class="title">Register Now</h3>
-                <form action="#" method="POST" class="account-form">
+                <form action="#" method="POST" class="account-form" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <input type="text" placeholder="First Name" name="F_Name"
