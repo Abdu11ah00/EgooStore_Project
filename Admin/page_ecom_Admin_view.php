@@ -144,7 +144,7 @@ include('./includes/header.php');
                                                 <div class="btn-group">
                                                     <a href="#" data-toggle="tooltip" title="Edit"
                                                         class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                    <a href="page_ecom_Admin_Delete.php?id=<?= $row['Admin_ID'] ?>"
+                                                    <a onclick="if(confirm('Action Delete.\nClick OK to continue.')) window.location='page_ecom_Admin_Delete.php?id=<?= $row['Admin_ID'] ?>';"
                                                         data-toggle="tooltip" title="Delete"
                                                         class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                                                 </div>

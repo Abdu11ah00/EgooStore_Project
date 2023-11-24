@@ -106,7 +106,7 @@
             $query = "INSERT INTO `admin_list` (`Admin_ID`, `Admin_FName`, `Admin_LName`, `Admin_Phone`, `Admin_Email`, `Admin_PSW`, `Admin_Type`)
                                 VALUES (NULL, '$A_FName', '$A_LName', '$A_Phone', '$A_Email', '$A_Password', '$A_Type');";
             if (mysqli_query($con, $query)) {
-                header("Location: index.php");
+                header("Location: page_ecom_Admin_view.php");
                 exit;
             } else {
                 //echo $query;

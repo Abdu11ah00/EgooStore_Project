@@ -147,7 +147,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
                             <input type="text" name="login_email"
-                                value="<?= (isset($_POST['login_email'])) ? $_POST['login_email'] : '' ?>"
+                                value="<?= (isset($_POST['login_email'])) ? trim($_POST['login_email']) : '' ?>"
                                 class="form-control input-lg" placeholder="Email">
                         </div>
                         <?php if (in_array("email", $error_fields))
