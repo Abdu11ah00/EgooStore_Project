@@ -49,6 +49,10 @@
                     <span class="sidebar-header-title">eCommerce</span>
                 </li>
                 <li>
+                    <a href="page_ecom_live_shop.php" <?= ($active == "live_Shop") ? "class=' active'" : "" ?>><span
+                            class="sidebar-nav-mini-hide">Live Shop</span></a>
+                </li>
+                <li>
                     <a href="page_ecom_dashboard.php" <?= ($active == "dashboard") ? "class=' active'" : "" ?>><span
                             class="sidebar-nav-mini-hide">Dashboard "PRO"</span></a>
                 </li>

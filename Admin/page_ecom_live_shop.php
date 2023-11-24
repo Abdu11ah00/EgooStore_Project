@@ -30,7 +30,7 @@ include('./includes/header.php');
 
             <!-- Main Sidebar -->
             <?php
-            $active = "dashboard";
+            $active = "live_Shop";
             include('./includes/index_main_sidebar.php');
             ?>
             <!-- END Main Sidebar -->

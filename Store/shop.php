@@ -24,6 +24,7 @@
 <body>
     <?php
     session_start();
+    include './DB-CONFIG.php';
     ?>
 
     <!-- ========== Add AD ========== -->
@@ -65,7 +66,6 @@
 
     <?php
     //Connect to MySQL
-    include './DB-CONFIG.php';
     $con = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME);
     if (!$con) {
         echo mysqli_connect_errno();
@@ -149,9 +149,19 @@
                                             <h5><a href="shop-single?id=<?= $row['Prod_ID'] ?>">
                                                     <?= $row['Prod_Name'] ?>
                                                 </a></h5>
-                                            <p><i class="icofont-star"></i><i class="icofont-star"></i><i
-                                                    class="icofont-star"></i><i class="icofont-star"></i><i
-                                                    class="icofont-star"></i></p>
+                                            <p>
+                                                <?php
+                                                $select_AVG = "SELECT AVG(`Fee_Rating`), COUNT(`Fee_Rating`) FROM `feedback` WHERE `FK_Prod_ID` = '" . $row['Prod_ID'] . "'";
+                                                $result_AVG = mysqli_query($con, $select_AVG);
+                                                $row_AVG = mysqli_fetch_assoc($result_AVG);
+
+                                                for ($i = 0; $i < round($row_AVG['AVG(`Fee_Rating`)']); $i++) {
+                                                    ?>
+                                                    <i class="icofont-star"></i>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </p>
                                             <h6>$
                                                 <?= $row['Prod_Price'] ?>
                                             </h6>
@@ -174,9 +184,15 @@
                                             <h5><a href="shop-single?id=<?= $row['Prod_ID'] ?>">
                                                     <?= $row['Prod_Name'] ?>
                                                 </a></h5>
-                                            <p><i class="icofont-star"></i><i class="icofont-star"></i><i
-                                                    class="icofont-star"></i><i class="icofont-star"></i><i
-                                                    class="icofont-star"></i></p>
+                                            <p>
+                                                <?php
+                                                for ($i = 0; $i < round($row_AVG['AVG(`Fee_Rating`)']); $i++) {
+                                                    ?>
+                                                    <i class="icofont-star"></i>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </p>
                                             <h6>$
                                                 <?= $row['Prod_Price'] ?>
                                             </h6>
