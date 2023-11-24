@@ -92,19 +92,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Get Random Name For File
         $img_random = rand(0, 10000000000) . '.' . $image_extension;
 
-        $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '\My_Projects\Online_Shopping_Project\Admin_Pages\img\Personal_Photos\\';
+        $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '\EgooStose_Project\Admin\img\Personal_Photos\\';
         $path = $uploads_dir . $_SESSION['A_Photo'];
-        if (unlink($path)) {
+        if (file_exists($path)) {
+            unlink($path);
             if ($img_error == UPLOAD_ERR_OK) {
                 $avatar = basename($img_name);
                 move_uploaded_file($img_tmp, "$uploads_dir/$avatar" . "$img_random");
 
             } else {
-                echo "File can't be uploaded";
+                // echo "File can't be uploaded";
                 exit;
             }
         } else {
-            echo "File can't be Deleted";
+            // echo "File can't be Deleted";
             exit;
         }
 

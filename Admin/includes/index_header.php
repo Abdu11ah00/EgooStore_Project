@@ -87,7 +87,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="page_ready_lock_screen.html"><i class="fa fa-lock fa-fw pull-right"></i> Lock Account</a>
+                    <a href="page_ready_lock_screen.html"><i class="fa fa-lock fa-fw pull-right"></i> Lock Account "PRO"</a>
                     <a href="logout.php"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
                 </li>
 
